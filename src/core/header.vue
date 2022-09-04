@@ -1,7 +1,7 @@
 <template >
     <nav class="header">
         <div class="header-icon">
-            <img src="../../assets/images/netflix_logo_icon.png" alt="logo">
+            <img src="@/assets/images/netflix_logo_icon.png" alt="logo">
             
         </div>
         <ul>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="avatar">
-                <img src="../../assets/images/avatars/avatar_geisha_japanese_woman_icon.png" alt="avatar">
+                <img src="@/assets/images/avatars/avatar_geisha_japanese_woman_icon.png" alt="avatar">
                 <span class="avatar-icon"></span>
             </div>
         </div>
@@ -48,7 +48,7 @@ export default {
     name: "Header",
     setup(){
         onMounted(() => {
-            
+            document.documentElement.dataset.scroll = 0;
             const storeScroll = () => {
                 document.documentElement.dataset.scroll = window.scrollY;
             }
@@ -64,10 +64,10 @@ export default {
 </style>
 
 <style lang="scss">
-    @import "../../assets/styles/variables.scss";
+    @import "../assets/styles/variables.scss";
 
     .header{
-        background-color: rgba(45, 45, 45, 0.1) !important;
+        background-color: rgba(20, 20, 20, 0.1) !important;
         height: 70px;
         width: 100%;
         position: fixed;
@@ -77,7 +77,8 @@ export default {
         padding-left: 40px;
         padding-right: 40px;
         font-size: 14px;
-        transition: 0.3s ease-out;
+        transition: 0.5s ease-out;
+        z-index: 10000;
 
         .header-icon{
             position: relative;
@@ -244,7 +245,7 @@ export default {
 
     html:not([data-scroll='0']) {
         .header{
-            background-color: rgba(45, 45, 45, 0.9) !important;
+            background-color: rgba(20, 20,20, 1) !important;
         }
     }
     

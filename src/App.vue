@@ -6,8 +6,8 @@
 
 
 <script>
-import Header from "./components/core/header.vue";
-import Home from "./components/pages/Home.vue";
+import Header from "./core/header.vue";
+import Home from "./pages/Home.vue";
 
 export default {
   name: "App",
@@ -19,12 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 
 </style>
