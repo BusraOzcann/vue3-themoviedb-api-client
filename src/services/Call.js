@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const call = {
-    originalImagePath: 'https://image.tmdb.org/t/p/original',
+    originalImagePath: 'https://image.tmdb.org/t/p/original/',
     imagePathW500: 'https://image.tmdb.org/t/p/w500',
     imagePathW400: 'https://image.tmdb.org/t/p/w400',
     imagePathW300: 'https://image.tmdb.org/t/p/w300',

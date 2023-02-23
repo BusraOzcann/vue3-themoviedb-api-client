@@ -1,7 +1,7 @@
 <template>
     <div id="home-entry">
         <div class="image">
-            <img :src="originalImagePath + popularOne.backdrop_path" alt="">
+            <img :src="source" :alt="popularOne.title">
         </div>
     </div>
 </template>
@@ -16,6 +16,7 @@ export default {
 
     setup(){
         const popularOne = ref({});
+        const source = ref('')
         const originalImagePath = filmService.originalImagePath;
 
         onMounted(() => {
@@ -25,16 +26,15 @@ export default {
         async function getPopular(){
             try{
                 let response = await filmService.getPopular(1)
-                
                 let random = Math.floor(Math.random() *  response.data.results.length);
                 popularOne.value = response.data.results[random];
-                console.log("Get response => ", popularOne.value);
+                source.value = originalImagePath + popularOne.value.backdrop_path
             }catch(e){
-                console.log("catch : ", e)
+                console.log({e})
             }
         }
 
-        return {popularOne, originalImagePath}
+        return {popularOne, originalImagePath, source}
     }
 }
 </script>

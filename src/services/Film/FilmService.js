@@ -25,6 +25,11 @@ const filmService = {
     getTopRated: function(page){
         let url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.VUE_APP_API_KEY}&language=en-US&page=${page}`;
         return call.getRequest(url);
+    },
+
+    getGenres: function(){
+        let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.VUE_APP_API_KEY}&language=en-US`
+        return call.getRequest(url);
     }
 }
 

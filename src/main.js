@@ -13,11 +13,14 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-
-
 library.add(fas, fab, far);
 
-createApp(App)
-.component('fa', FontAwesomeIcon)
-.use(store)
-.mount("#app");
+// MIXINS
+import globalAPI from "./mixins/GlobalAPI"
+
+const app = createApp(App)
+
+app.component('fa', FontAwesomeIcon)
+app.use(store)
+app.mixin(globalAPI)
+app.mount("#app");
